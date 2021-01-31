@@ -135,14 +135,14 @@ export default {
   methods: {
     getAutoTestCaseList: async function () {
       this.queryInfo.userId = JSON.parse(window.sessionStorage.getItem('user')).id
-      console.log(this.queryInfo)
+      window.console.log(this.queryInfo)
       const { data: res } = await this.$http.get('/templateOrCaseListByUser', { params: this.queryInfo })
       if (res.status !== 200) {
         return this.$message.error(res.msg)
       }
       this.autoTestCaseList = res.obj.autoCaseList
       this.total = res.obj.total
-      console.log(this.autoTestCaseList)
+      window.console.log(this.autoTestCaseList)
     },
     handleSizeChange: function (newSize) {
       this.queryInfo.pageSize = newSize
@@ -197,7 +197,7 @@ export default {
     },
     handleSelectionChange (val) {
       this.multipleSelection = val
-      console.log(this.multipleSelection)
+      window.console.log(this.multipleSelection)
     },
     deleteTemplate: async function () {
       if (this.multipleSelection.length === 0) {

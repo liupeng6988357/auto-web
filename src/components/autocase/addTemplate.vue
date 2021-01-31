@@ -286,7 +286,7 @@ export default {
         return this.$message.error(res.msg)
       }
       this.elelist = res.obj
-      console.log(this.elelist)
+      window.console.log(this.elelist)
     },
     getEleEvent: async function () {
       const { data: res } = await this.$http.get('/getEleById', { params: { id: this.isSelectedEleId } })
@@ -294,7 +294,7 @@ export default {
         return this.$message.error(res.msg)
       }
       this.addForm.event = res.obj.eleeventname
-      console.log(res.obj)
+      window.console.log(res.obj)
     },
     /** 添加步骤 */
     addStep: async function () {
@@ -307,7 +307,7 @@ export default {
       step.eleId = this.isSelectedEleId
       this.addDialogVisible = false
       this.stepList.push(step)
-      console.log(this.stepList)
+      window.console.log(this.stepList)
     },
     /** 添加模板 */
     addTemplate: async function () {
@@ -326,7 +326,7 @@ export default {
       } else {
         this.autoTestCase.posttemplate += (res.obj.id + ',')
       }
-      console.log(this.templateList)
+      window.console.log(this.templateList)
     },
     /** 获取项目列表 */
     getProjectList: async function () {
@@ -336,7 +336,7 @@ export default {
         return this.$message.error(res.msg)
       }
       this.proList = res.obj
-      console.log(this.proList)
+      window.console.log(this.proList)
     },
     /** 保存模板 */
     saveAutoTest: async function () {
@@ -358,7 +358,7 @@ export default {
       } else {
         return this.$message.warning('参数错误！！！')
       }
-      console.info(this.autoTestCase)
+      window.console.info(this.autoTestCase)
       const { data: res } = await this.$http.post('/addAutoTestCase', this.autoTestCase)
       if (res.status !== 200) {
         return this.$message.error(res.msg)
@@ -397,7 +397,7 @@ export default {
       }
       this.autoTestCase.elelist = eleIdStr + this.autoTestCase.elelist + eleIdStrLast
       this.autoTestCase.paramslist = paramStr + this.autoTestCase.paramslist + paramStrLast
-      console.info(this.autoTestCase)
+      window.console.info(this.autoTestCase)
       const loading = this.$loading({
         lock: true,
         text: '正在执行用例，请稍等！！！',

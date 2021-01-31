@@ -137,13 +137,13 @@ export default {
     addDialogClose: function () {},
     getProjectList: async function () {
       this.queryInfo.userId = JSON.parse(window.sessionStorage.getItem('user')).id
-      console.log(this.queryInfo)
+      window.console.log(this.queryInfo)
       const { data: res } = await this.$http.get('/projectlist', { params: this.queryInfo })
       if (res.status !== 200) {
         return this.$message.error(res.msg)
       }
       this.projectList = res.obj
-      console.log(this.projectList)
+      window.console.log(this.projectList)
     },
     handleSizeChange: function (newSize) {
       this.queryInfo.pageSize = newSize
@@ -156,7 +156,7 @@ export default {
     addProject: async function () {
       this.addForm.uid = JSON.parse(window.sessionStorage.getItem('user')).id
       this.addForm.projectcreateuser = JSON.parse(window.sessionStorage.getItem('user')).username
-      console.log(this.addForm.uid)
+      window.console.log(this.addForm.uid)
       const { data: res } = await this.$http.post('/insertProject', this.addForm)
       if (res.status !== 200) {
         return this.$message.error(res.msg)

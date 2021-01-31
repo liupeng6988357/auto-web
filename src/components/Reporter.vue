@@ -220,7 +220,7 @@ export default {
     },
     autoTaskCaseOption: {
       handler (newVal, oldVal) {
-        console.log(newVal)
+        window.console.log(newVal)
         this.autoTaskCounts.setOption(newVal)
         this.drawChart()
       },

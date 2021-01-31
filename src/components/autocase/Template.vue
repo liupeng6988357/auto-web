@@ -141,7 +141,7 @@ export default {
       }
       this.templateList = res.obj.autoCaseList
       this.total = res.obj.total
-      console.log(this.templateList)
+      window.console.log(this.templateList)
     },
     handleSizeChange: function (newSize) {
       this.queryInfo.pageSize = newSize
@@ -196,7 +196,7 @@ export default {
     },
     handleSelectionChange (val) {
       this.multipleSelection = val
-      console.log(this.multipleSelection)
+      window.console.log(this.multipleSelection)
     },
     deleteTemplate: async function () {
       if (this.multipleSelection.length === 0) {

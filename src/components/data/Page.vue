@@ -118,7 +118,7 @@ export default {
         return this.$message.error(res.msg)
       }
       this.pageList = res.obj
-      console.log(this.pageList)
+      window.console.log(this.pageList)
     },
     /** 页面size变化 */
     handleSizeChange: function (newSize) {
@@ -158,7 +158,7 @@ export default {
     },
     /** 删除页面 */
     deletePage: async function (id) {
-      console.log(id)
+      window.console.log(id)
       const { data: res } = await this.$http.delete('/deletePage', { params: { id } })
       if (res.status === 500) {
         return this.$message.error(res.msg)

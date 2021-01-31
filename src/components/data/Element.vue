@@ -138,7 +138,7 @@ export default {
       }
       this.elelist = res.obj
       this.total = parseInt(res.log)
-      console.log(this.elelist)
+      window.console.log(this.elelist)
     },
     handleSizeChange: function (newSize) {
       this.queryInfo.pageSize = newSize
@@ -165,14 +165,14 @@ export default {
     getAddressTypeList: async function () {
       const { data: res } = await this.$http.get('/getAddressTypeList')
       this.addressList = res.obj
-      console.log(this.addressList)
+      window.console.log(this.addressList)
     },
     /** 添加元素 */
     addElement: async function () {
       this.addForm.pageid = this.pageData.pageId
       this.addForm.pagename = this.pageData.pagename
       this.addForm.createby = JSON.parse(window.sessionStorage.getItem('user')).username
-      console.log(this.addForm.createby)
+      window.console.log(this.addForm.createby)
       this.addForm.eleeventname = this.isSelectedEvent
       this.addForm.elelocaltype = this.isSelectedAddress
       const { data: res } = await this.$http.post('/addElement', this.addForm)

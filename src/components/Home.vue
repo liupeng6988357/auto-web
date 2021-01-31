@@ -84,13 +84,13 @@ export default {
     getMenuList: async function () {
       const { data: res } = await this.$http.get('/menulist')
       this.menuList = res
-      console.log(this.menuList)
+      window.console.log(this.menuList)
     },
     saveNavState (activePath, activeName) {
       window.sessionStorage.setItem('activePath', activePath)
       this.activePath = activePath
       this.title = activeName
-      console.log(this.activePath)
+      window.console.log(this.activePath)
     }
   }
 }

@@ -263,11 +263,11 @@ export default {
         this.taskQuery.caseList += this.multipleSelection[index].id + ','
       }
       this.$message.success('添加成功！！！')
-      console.info(this.taskQuery.caseList)
+      window.console.info(this.taskQuery.caseList)
     },
     handleSelectionChange (val) {
       this.multipleSelection = val
-      console.log(this.multipleSelection)
+      window.console.log(this.multipleSelection)
     },
     saveTask: async function () {
       const { data: res } = await this.$http.post('/saveTask', this.taskQuery)
