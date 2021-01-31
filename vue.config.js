@@ -27,5 +27,9 @@ module.exports = {
         return args
       })
     })
-  }
+  },
+  publicPath: './',
+  outputDir: 'dist',
+  assetsDir: 'assets',
+  indexPath: 'index.html'
 }
