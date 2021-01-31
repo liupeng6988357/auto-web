@@ -10,7 +10,7 @@ import axios from 'axios'
 import Qs from 'qs'
 import echarts from 'echarts'
 
-axios.defaults.baseURL = 'http://localhost:8081/api/'
+axios.defaults.baseURL = 'http://192.168.1.10:8081/api/'
 
 Vue.prototype.$http = axios
 Vue.prototype.$echarts = echarts
