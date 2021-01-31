@@ -35,8 +35,7 @@ const router = new VueRouter({
         { path: '/users', component: User },
         { path: '/environmentals', component: Environmental }
       ]
-    }
-  ]
+    }]
 })
 
 // 挂载路由导航守卫
@@ -44,7 +43,7 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login') return next()
   // 获取token
   const token = window.sessionStorage.getItem('token')
-  console.log(token)
+  window.console.log(token)
   if (!token) return next('/login')
   next()
 })
